@@ -8,6 +8,9 @@
         "AdminIp": {
             "value": "110.5.69.221/32"
         },
+        "ClientIp": {
+            "value": "110.5.69.221/32"
+        },
         "Environment": { 
             "value": "Test" 
         },
