@@ -1,0 +1,124 @@
+{ 
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "ProjectName": {
+            "value": "jcbagtas"
+        },
+        "AdminIp": {
+            "value": "110.5.69.221/32"
+        },
+        "Environment": { 
+            "value": "Test" 
+        },
+        "Location": {
+            "value": "southeastasia"
+        },
+        "NetworkConfig": {
+            "value": {
+                "CidrVnet": "192.168.0.0/21",
+                "CidrAppGatewaySubnet": "192.168.0.0/24",
+                "CidrPublicSubnet": "192.168.1.0/24",
+                "CidrAppSubnet": "192.168.2.0/24",
+                "CidrDatabaseSubnet": "192.168.3.0/24",
+                "CidrContainersSubnet": "192.168.4.0/24",
+                "CidrFirewallSubnet": "192.168.5.0/24"
+            }
+        },
+        "AzurePortalIpAddresses": {
+            "value": [
+                {
+                    "ipAddressOrRange": "51.4.229.218"
+                },
+                
+                {
+                    "ipAddressOrRange": "139.217.8.252"
+                },
+                {
+                    "ipAddressOrRange": "52.244.48.71"
+                },
+                {
+                    "ipAddressOrRange": "104.42.195.92"
+                },
+                {
+                    "ipAddressOrRange": "40.76.54.131"
+                },
+                {
+                    "ipAddressOrRange": "52.176.6.30"
+                },
+                {
+                    "ipAddressOrRange": "52.169.50.45"
+                },
+                {
+                    "ipAddressOrRange": "52.187.184.26"
+                }
+            ]
+        },
+        "DefaultTags": {
+            "value": {
+                "project": "jcbagtas",
+                "manager": "manager@domain.com",
+                "approver": "approver@domain.com",
+                "classification": "Internal",
+                "adoTicket": "000",
+                "costCenter": "POC"
+            }
+        },
+        "AppGatewayWafSettings": {
+            "value": {
+                "ruleSetVersion": "3.2",
+                "enabled": "true",
+                "firewallMode": "Detection",
+                "maxRequestBodySizeInKb": 128,
+                "fileUploadLimitInMb": 1,
+                "ruleSetType": "OWASP"
+            }
+        },
+        "StorageAccountConfig": {
+            "value": {
+                "kind": "StorageV2",
+                "sku": "Standard_LRS"
+            }
+        },
+        "AppServicePlanSizes": {
+            "value": {
+                "Test": {
+                    "appServicePlanSku": {
+                        "name": "P1V2",
+                        "tier": "PremiumV2"
+                    },
+                    "appServicePlanKind": "linux",
+                    "maximumElasticWorkerCount": 1
+                },
+                "Acceptance": {
+                    "appServicePlanSku": {
+                        "name": "P1V2",
+                        "tier": "PremiumV2"
+                    },
+                    "appServicePlanKind": "linux",
+                    "maximumElasticWorkerCount": 3
+                },
+                "Production": {
+                    "appServicePlanSku": {
+                        "name": "P1V2",
+                        "tier": "PremiumV2"
+                    },
+                    "appServicePlanKind": "linux",
+                    "maximumElasticWorkerCount": 3,
+                    "multiSize": "Medium",
+                    "internalLoadBalancingMode": "Web, Publishing"
+                }
+            }
+        },
+        "PfxPassword": {
+            "value": "123456"
+        },
+        "FtpConfig": {
+            "value": {
+                "username": "default",
+                "password": "123456"
+            }
+        }
+        
+    }
+}

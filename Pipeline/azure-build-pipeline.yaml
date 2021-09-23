@@ -1,0 +1,10 @@
+resources:
+  repositories:
+  - repository: "195142091-infra"
+    type: git
+    name: 195142091-infra
+    ref: master
+pool: Default
+
+stages:
+- template: "./Pipeline/azure-pipelines.yaml@195142091-infra"
